@@ -51,30 +51,30 @@ bool search(int value, int values[], int n)
 
 
 
-/**
- * Sorts array of n values.
- */
+// Selection sort is like organizing a hand of cards, plopping in the smallest of the rest of the cards
 void sort(int values[], int n)
 {
-    int i, j, min_index;
-    // One by one move boundary of unsorted subarray
-    for (i = 0; i < n-1; i++)
+    // Starting from the leftmost number
+    for (int i = 0; i < n - 1; i++)
     {
-        // Find the minimum element in unsorted array
-        min_index = i;
-        for (j = i+1; j < n; j++)
+
+        // Find the smallest number
+        int min_index = i;
+        for (int j = (i + 1); j < n; j++)
         {
             if (values[j] < values[min_index])
             {
                 min_index = j;
             }
         }
+
+        // Swap the numbers
         int temp = values[i];
         values[i] = values[min_index];
         values[min_index] = temp;
 
+        // Print for sanity check and to visualize errors
         printf("this is values i %i\n", values[i]);
-        printf("this is values j %i\n", values[j]);
         printf("this is values min %i\n", values[min_index]);
     }
 }
