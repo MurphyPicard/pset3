@@ -22,6 +22,11 @@ bool search(int value, int values[], int n)
 
     while (n > 0)
     {
+        if (leftindex > rightindex)
+        {
+            return false;
+        }
+
         // A match
         if (value == values[(leftindex + rightindex) / 2])
         {
