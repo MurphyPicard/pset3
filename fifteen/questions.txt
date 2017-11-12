@@ -1,4 +1,4 @@
-0. TODO
-1. TODO
-2. TODO
-3. TODO
+0. 3x3 to 9x9
+1. 2d arrays
+2. greet
+3. init, draw, move, won
