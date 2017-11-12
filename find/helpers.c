@@ -16,10 +16,30 @@
 bool search(int value, int values[], int n)
 {
 
+    // These indexes will be moved to narrow down the search.
     int leftindex = 0;
     int rightindex = n - 1;
+
+    while (n > 0)
+    {
+        if (value == values[(leftindex + rightindex) / 2])
+        {
+            return true;
+        }
+        else if ( value > values[(leftindex + rightindex) / 2])
+        {
+            leftindex = (leftindex + rightindex) / 2 + 1;
+        }
+        else if ( value < values[(leftindex + rightindex) / 2])
+        {
+            rightindex = (leftindex + rightindex) / 2 - 1;
+        }
+
+    }
     return false;
 }
+
+
 
 /**
  * Sorts array of n values.

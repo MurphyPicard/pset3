@@ -3,7 +3,7 @@
  *
  * Helper functions for Problem Set 3.
  */
- 
+#include <stdio.h>
 #include <cs50.h>
 
 /**
