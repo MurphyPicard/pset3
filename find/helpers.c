@@ -22,14 +22,19 @@ bool search(int value, int values[], int n)
 
     while (n > 0)
     {
+        // A match
         if (value == values[(leftindex + rightindex) / 2])
         {
             return true;
         }
+
+        // A bigger number
         else if ( value > values[(leftindex + rightindex) / 2])
         {
             leftindex = (leftindex + rightindex) / 2 + 1;
         }
+
+        // A smaller number
         else if ( value < values[(leftindex + rightindex) / 2])
         {
             rightindex = (leftindex + rightindex) / 2 - 1;
@@ -46,10 +51,29 @@ bool search(int value, int values[], int n)
  */
 void sort(int values[], int n)
 {
-    // TODO: implement a sorting algorithm
-    while ()
+
+
+    int i, j, min_index;
+
+    // One by one move boundary of unsorted subarray
+    for (i = 0; i < n-1; i++)
     {
+        // Find the minimum element in unsorted array
+        min_index = i;
+        for (j = i+1; j < n; j++)
+        {
+          if (values[j] < values[min_index])
+          {
+              min_index = j;
+              int temp = values[i];
+              values[i] = values[min_index];
+              values[min_index] = temp;
+          }
+
+        }
+        // Swap the found minimum element with the first element
+
 
     }
-    return;
+
 }
