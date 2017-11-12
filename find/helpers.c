@@ -56,10 +56,7 @@ bool search(int value, int values[], int n)
  */
 void sort(int values[], int n)
 {
-
-
     int i, j, min_index;
-
     // One by one move boundary of unsorted subarray
     for (i = 0; i < n-1; i++)
     {
@@ -67,18 +64,17 @@ void sort(int values[], int n)
         min_index = i;
         for (j = i+1; j < n; j++)
         {
-          if (values[j] < values[min_index])
-          {
-              min_index = j;
-              int temp = values[i];
-              values[i] = values[min_index];
-              values[min_index] = temp;
-          }
-
+            if (values[j] < values[min_index])
+            {
+                min_index = j;
+            }
         }
-        // Swap the found minimum element with the first element
+        int temp = values[i];
+        values[i] = values[min_index];
+        values[min_index] = temp;
 
-
+        printf("this is values i %i\n", values[i]);
+        printf("this is values j %i\n", values[j]);
+        printf("this is values min %i\n", values[min_index]);
     }
-
 }
