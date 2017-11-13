@@ -50,8 +50,8 @@ int main(int argc, string argv[])
     d = atoi(argv[1]);
     if (d < DIM_MIN || d > DIM_MAX)
     {
-        printf("Board must be between %i x %i and %i x %i, inclusive.\n",
-            DIM_MIN, DIM_MIN, DIM_MAX, DIM_MAX);
+        printf("Board must be between %i x %i and %i x %i, inclusive.\n", DIM_MIN, DIM_MIN, DIM_MAX,
+            DIM_MAX);
         return 2;
     }
 
@@ -194,9 +194,9 @@ void init(void)
     {
 
 
-        int temps = board[d-1][d-2];
-        board[d-1][d-2] = board[d-1][d-3];
-        board[d-1][d-3] = temps;
+        int temps = board[d - 1][d - 2];
+        board[d - 1][d - 2] = board[d - 1][d - 3];
+        board[d - 1][d - 3] = temps;
     }
 
 }
