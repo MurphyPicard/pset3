@@ -287,11 +287,14 @@ bool move(int tile)
 bool won(void)
 {
     int counter = 1;
+
     // Iterate over board to check values
     for (int i = 0; i < d; i++)
     {
         for (int j = 0; j < d; j++)
         {
+
+            // A win is determined by numbers in order so board[i][j] should equal counter at every step.
             if (board[i][j] != counter)
             {
                 return false;
@@ -300,6 +303,8 @@ bool won(void)
             {
                 counter++;
             }
+
+            // If we actually get to the biggest number it means we have won.
             if (counter == d * d - 1)
             {
                 return true;
