@@ -95,7 +95,7 @@ int main(int argc, string argv[])
         // check for win
         if (won())
         {
-            printf("ftw!\n");
+            printf("For the win !!!!!\n");
             break;
         }
 
