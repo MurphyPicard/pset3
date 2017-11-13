@@ -158,11 +158,18 @@ void init(void)
 {
 
     // example:
+
+    // for each row
+    //     for each column
+    //         set value for tile
+
     // int grid[0][0] = 8;
     // int grid[0][1] = 7;
     // ...
     // int grid[2][1] = 1;
     // int grid[2][2] = 0;
+
+    // Easy peasy!
 
     // This starts with the biggest tile possible
     int bignum = d * d - 1;
@@ -176,14 +183,14 @@ void init(void)
             {
 
                 // This assigns number according to my example above.
-                int board[i][j] = bignum;
+                board[i][j] = bignum;
                 bignum--;
             }
         }
     }
 
     // Swap numbers (with temp variable) in the case of even d boards
-
+    // TODO - will do draw first
 
 
 }
@@ -193,7 +200,15 @@ void init(void)
  */
 void draw(void)
 {
-    // TODO
+    // Draw's the board so the user can see it
+    for (int i = 0; i < d; i++)
+    {
+        for (int j = 0; j < d; j++)
+        {
+            printf("%i", board[i][j]);
+        }
+        printf("\n");
+    }
 }
 
 /**
