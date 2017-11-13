@@ -11,7 +11,7 @@
  * Note that usleep is obsolete, but it offers more granularity than
  * sleep and is simpler to use than nanosleep; `man usleep` for more.
  */
- 
+
 #define _XOPEN_SOURCE 500
 
 #include <cs50.h>
@@ -102,7 +102,7 @@ int main(int argc, string argv[])
         // prompt for move
         printf("Tile to move: ");
         int tile = get_int();
-        
+
         // quit if user inputs 0 (for testing)
         if (tile == 0)
         {
@@ -123,7 +123,7 @@ int main(int argc, string argv[])
         // sleep thread for animation's sake
         usleep(500000);
     }
-    
+
     // close log
     fclose(file);
 
@@ -152,11 +152,40 @@ void greet(void)
 
 /**
  * Initializes the game's board with tiles numbered 1 through d*d - 1
- * (i.e., fills 2D array with values but does not actually print them).  
+ * (i.e., fills 2D array with values but does not actually print them).
  */
 void init(void)
 {
-    // TODO
+
+    // example:
+    // int grid[0][0] = 8;
+    // int grid[0][1] = 7;
+    // ...
+    // int grid[2][1] = 1;
+    // int grid[2][2] = 0;
+
+    // This starts with the biggest tile possible
+    int bignum = d * d - 1;
+
+    // This fills in the 2D array
+    while (bignum >= 0)
+    {
+        for (int i = 0; i < d; i++)
+        {
+            for (int j = 0; j < d; j++)
+            {
+
+                // This assigns number according to my example above.
+                int board[i][j] = bignum;
+                bignum--;
+            }
+        }
+    }
+
+    // Swap numbers (with temp variable) in the case of even d boards
+
+
+
 }
 
 /**
@@ -169,7 +198,7 @@ void draw(void)
 
 /**
  * If tile borders empty space, moves tile and returns true, else
- * returns false. 
+ * returns false.
  */
 bool move(int tile)
 {
@@ -178,7 +207,7 @@ bool move(int tile)
 }
 
 /**
- * Returns true if game is won (i.e., board is in winning configuration), 
+ * Returns true if game is won (i.e., board is in winning configuration),
  * else false.
  */
 bool won(void)
