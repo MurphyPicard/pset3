@@ -307,15 +307,14 @@ bool won(void)
             }
             else if (board[i][j] == counter)
             {
+                // If we actually get to the biggest number it means we have won.
+                if (counter == d * d - 1)
+                {
+                    return true;
+                }
+
                 counter++;
             }
-
-            // If we actually get to the biggest number it means we have won.
-            if (counter == d * d - 1)
-            {
-                return true;
-            }
-
         }
     }
 
