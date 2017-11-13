@@ -244,7 +244,7 @@ bool move(int tile)
                 zeroR = r;
                 zeroC = c;
             }
-            if (board[r][c] = tile)
+            if (board[r][c] == tile)
             {
                 userchoiceR = r;
                 userchoiceC = c;
