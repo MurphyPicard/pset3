@@ -205,7 +205,15 @@ void draw(void)
     {
         for (int j = 0; j < d; j++)
         {
-            printf("%2i ", board[i][j]);
+            if (board[i][j] == 0)
+            {
+                printf("__");
+            }
+            else
+            {
+                printf("%2i ", board[i][j]);
+            }
+
         }
         printf("\n");
     }
@@ -217,7 +225,56 @@ void draw(void)
  */
 bool move(int tile)
 {
-    // TODO
+
+    // User choice location needs to be saved
+    int userchoiceR;
+    int userchoiceC;
+
+    // Zero location needs to be saved
+    int zeroR;
+    int zeroC;
+
+    // Iterating through the board
+    for (int r = 0; r < d; r++)
+    {
+        for (int c = 0; c < d; c++)
+        {
+            if (board[r][c] == 0)
+            {
+                zeroR = r;
+                zeroC = c;
+            }
+            if (board[r][c] = tile)
+            {
+                userchoiceR = r;
+                userchoiceC = c;
+            }
+        }
+    }
+
+    // First check if we are in the same row...
+    if (zeroR == userchoiceR)
+    {
+        // Now check if we are within one column
+        if (zeroC - userchoiceC == 1 || zeroC - userchoiceC == -1)
+        {
+            // Now swap userchoice with 0
+            board[zeroR][zeroC] = tile;
+            board[userchoiceR][userchoiceC] = 0;
+        }
+    }
+
+    // Now swap C's and R's
+    if (zeroC == userchoiceC)
+    {
+        // Now check if we are within one column
+        if (zeroR - userchoiceR == 1 || zeroR - userchoiceR == -1)
+        {
+            // Now swap userchoice with 0
+            board[zeroR][zeroC] = tile;
+            board[userchoiceR][userchoiceC] = 0;
+        }
+    }
     return false;
 }
 
