@@ -189,9 +189,15 @@ void init(void)
         }
     }
 
-    // Swap numbers (with temp variable) in the case of even d boards
-    // TODO - will do draw first
+    // Swap 1 and 2 on even d boards (row d-1 and columns d-2 and d-3)
+    if (d == 4 || d == 6 || d == 8)
+    {
+        int temp; // To hold a spot.
 
+        int temp = board[d-1][d-2];
+        board[d-1][d-2] = board[d-1][d-3]
+        board[d-1][d-3] = temp;
+    }
 
 }
 
