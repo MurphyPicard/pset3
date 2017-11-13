@@ -286,6 +286,27 @@ bool move(int tile)
  */
 bool won(void)
 {
-    // TODO
+    int counter = 1;
+    // Iterate over board to check values
+    for (int i = 0; i < d; i++)
+    {
+        for (int j = 0; j < d; j++)
+        {
+            if (board[i][j] != counter)
+            {
+                return false;
+            }
+            else if (board[i][j] == counter)
+            {
+                counter++;
+            }
+            if (counter == d * d - 1)
+            {
+                return true;
+            }
+
+        }
+    }
+
     return false;
 }
