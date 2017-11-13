@@ -261,18 +261,20 @@ bool move(int tile)
             // Now swap userchoice with 0
             board[zeroR][zeroC] = tile;
             board[userchoiceR][userchoiceC] = 0;
+            return true;
         }
     }
 
     // Now swap C's and R's
     if (zeroC == userchoiceC)
     {
-        // Now check if we are within one column
+        // Now check if we are within one row
         if (zeroR - userchoiceR == 1 || zeroR - userchoiceR == -1)
         {
             // Now swap userchoice with 0
             board[zeroR][zeroC] = tile;
             board[userchoiceR][userchoiceC] = 0;
+            return true;
         }
     }
     return false;
