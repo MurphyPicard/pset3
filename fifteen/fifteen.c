@@ -194,9 +194,9 @@ void init(void)
     {
 
 
-        int temps = board[d - 1][d - 2];
-        board[d - 1][d - 2] = board[d - 1][d - 3];
-        board[d - 1][d - 3] = temps;
+        // int temps = board[d - 1][d - 2];
+        board[d - 1][d - 2] = 2;
+        board[d - 1][d - 3] = 1;
     }
 
 }
