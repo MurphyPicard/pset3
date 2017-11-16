@@ -19,11 +19,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-// constants
+// constants - Ara - note how this is done in C
 #define DIM_MIN 3
 #define DIM_MAX 9
 
-// board
+// board - interesting how this is done in C
 int board[DIM_MAX][DIM_MAX];
 
 // dimensions
@@ -131,18 +131,14 @@ int main(int argc, string argv[])
     return 0;
 }
 
-/**
- * Clears screen using ANSI escape sequences.
- */
+// Clears screen using ANSI escape sequences.
 void clear(void)
 {
     printf("\033[2J");
     printf("\033[%d;%dH", 0, 0);
 }
 
-/**
- * Greets player.
- */
+// Greets player
 void greet(void)
 {
     clear();
