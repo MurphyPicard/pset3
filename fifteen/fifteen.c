@@ -312,6 +312,8 @@ bool won(void)
                 // If we actually get to the biggest number it means we have won.
                 if (counter == d * d - 1)
                 {
+
+                    // Only returns true if all numbers are in order.
                     return true;
                 }
 
@@ -321,5 +323,6 @@ bool won(void)
         }
     }
 
+    // Always returns false, except when all the numbers are in order.
     return false;
 }
