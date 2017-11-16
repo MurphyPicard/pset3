@@ -313,6 +313,7 @@ bool won(void)
                     return true;
                 }
 
+                // To keep pace with the correct numbers if winning
                 counter++;
             }
         }
