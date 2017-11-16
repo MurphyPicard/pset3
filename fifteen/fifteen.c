@@ -247,11 +247,15 @@ bool move(int tile)
         {
             if (board[r][c] == 0)
             {
+
+                // Setting the tile row and column to variables for later comparison
                 zeroR = r;
                 zeroC = c;
             }
             if (board[r][c] == tile)
             {
+
+                // Setting the 0 row and column to variables for comparison purposes
                 userchoiceR = r;
                 userchoiceC = c;
             }
