@@ -217,6 +217,8 @@ void draw(void)
             }
             else
             {
+
+                // Prints out the 15 numbers (or however many) with a pleasing amount of spaces
                 printf("%2i ", board[i][j]);
             }
 
